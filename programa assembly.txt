@@ -1,0 +1,33 @@
+INTRUÇÕES PARA O MONO CICLO :
+   SW    bit extra   REG   endereço na memoria
+0:"111"     "0"     "0100"      "00000001"
+   
+    BNE  bit extra   deslocamento    REG0     REG1
+1: "101"     "0"        "0101"       "0100"   "0101"
+
+    LW   bit extra     REG       endereço
+2: "000"     "0"       "0000"     "00000010"
+
+    LW   bit extra     REG       endereço
+3: "000"     "0"       "0001"     "00000011"
+
+    ADD   bit extra  REG_DEST      REG0      REG1
+4: "001"     "0"       "0100"     "0000"    "0001"
+ 
+    JMP  bit extra   endereço de salto
+5: "110"   "00000"       "00000000"
+
+
+INTRUÇÕES PARA O MULTICICLO :
+
+    LW     bit extra    REG        endereço
+0: "000"     "0"       "0000"     "00000010"
+
+    LW     bit extra    REG        endereço
+1: "000"     "0"       "0001"     "00000011"
+
+    ADD   bit extra  REG_DEST      REG0      REG1
+4: "001"     "0"       "0100"     "0000"    "0001"
+
+   SW    bit extra   REG   endereço na memoria
+7:"111"     "0"     "0100"      "00000001"
