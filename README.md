@@ -14,7 +14,7 @@ O processador possui as seguintes características:
 - **Memória de Instruções**: 255 posições.
 - **Memória de Dados**: 255 posições.
 - **Banco de Registradores**: 16 registradores de 16 bits cada.
-- **Instruções**: Suporte para operações básicas como **SW**, **LW**, **ADD**, **BNE** e **JMP**.
+- **Instruções**: Suporte para operações básicas como **SW**, **LW**, **ADD**, **SUB**, **MUL**, **BNE**, **BEQ** e **JMP**.
 
 Foram simuladas as execuções de ambos os processadores utilizando o software **ModelSim**, como apresentado nas imagens dos resultados.
 
@@ -30,11 +30,11 @@ Foram simuladas as execuções de ambos os processadores utilizando o software *
 
 | **Instrução** | **Formato**                                    | **Descrição**                           |
 |---------------|-----------------------------------------------|----------------------------------------|
-| SW            | `111 0 REG 00000001`                         | Armazena um valor do registrador na memória. |
-| BNE           | `101 0 0101 REG0 REG1`                      | Salta se os registradores REG0 e REG1 forem diferentes. |
-| LW            | `000 0 REG 00000010`                         | Carrega um valor da memória para um registrador. |
-| ADD           | `001 0 REG_DEST REG0 REG1`                   | Soma dois registradores e armazena o resultado. |
-| JMP           | `110 00000 00000000`                         | Salta para um endereço especificado. |
+| SW            | `111 0 REG(4bits) ENDEREÇO_MEMORIA(8bits)`                         | Armazena um valor do registrador na memória. |
+| BNE           | `101 0 DESLOCAMENTO(4bits) REG0(4bits) REG1(4bits)`                      | Salta se os registradores REG0 e REG1 forem diferentes. |
+| LW            | `000 0 REG(4bits) ENDEREÇO_MEMORIA(8bits)`                         | Carrega um valor da memória para um registrador. |
+| ADD           | `001 0 REG_DEST(4bits) REG0(4bits) REG1(4bits)`                   | Soma dois registradores e armazena o resultado. |
+| JMP           | `110 00000 ENDEREÇO_MEMORIA(8bits)`                         | Salta para um endereço especificado. |
 
 ---
 
